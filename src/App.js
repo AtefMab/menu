@@ -1,5 +1,5 @@
 import "./App.css";
-
+import img from "./logo.png";
 function App() {
   const scrollToSection = (id) => {
     const section = document.getElementById(id);
@@ -7,11 +7,21 @@ function App() {
       section.scrollIntoView({ behavior: "smooth", inline: "center" });
     }
   };
-
   return (
     <div className="App">
       <header className="header">
-        <h1>No Name Coffee</h1>
+        <img
+          src={img}
+          style={{
+            position: "absolute",
+            left: 0,
+            height: "100%",
+            width: "100%",
+            zIndex: -1,
+          }}
+        />
+        <h1 style={{ fontFamily: "sans-serif" }}>No Name Coffee</h1>
+
         <nav className="nav">
           <button onClick={() => scrollToSection("cafe")}>Café</button>
           <button onClick={() => scrollToSection("jus")}>Jus</button>
